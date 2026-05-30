@@ -59,14 +59,31 @@ to build a resilient and intelligent wireless ecosystem for future IoT deploymen
 # Technical Architecture
 
 ## System Architecture Diagram
+``mermaid
+flowchart TD
 
-The overall CREIP architecture showing sensor nodes, AI-driven routing intelligence, predictive path optimization, congestion prediction, self-healing logic, and cloud monitoring.
+A[Sensor / Edge Nodes<br>EFR32MG24]
+--> B[Local RF Monitoring]
+--> C[Mesh Communication Layer]
+--> D[AI Cognitive Routing Engine<br>EFR32MG26]
 
-<p align="center">
-  <img src="images/system-architecture-diagram.png" alt="CREIP System Architecture" width="1000"/>
-</p>
+D --> E[RF Environment Learning Engine]
+E --> F[Digital RF Twin Database]
 
----
+D --> G[Predictive Path Optimization]
+G --> H[Dynamic Route Assignment]
+
+D --> I[Congestion Prediction]
+D --> J[Self-Healing Network Logic]
+
+H --> K[Wi-SUN / Zigbee / Thread Mesh]
+
+K --> L[Cloud Dashboard / Local Monitoring]
+
+L --> M[RF Heatmaps]
+L --> N[Network Health Analytics]
+L --> O[Latency Visualization]
+L --> P[Packet Flow Visualization]
 
 ## Data Flow Architecture
 
