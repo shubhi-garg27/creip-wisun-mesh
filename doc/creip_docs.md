@@ -238,4 +238,67 @@ G --> H
 | EFR32MG24 SoC        | Mesh communication nodes |
 | EFR32MG26 SoC        | AI routing controller    |
 | Wireless Pro Kit     | Development & debugging  |
-| BRD4198A Radio Board | Wi-SUN                   |
+| BRD4198A Radio Board | Wi-SUN testing           |
+
+---
+
+## External Hardware
+
+| Component                 | Purpose                      |
+| ------------------------- | ---------------------------- |
+| Raspberry Pi              | Dashboard hosting            |
+| Environmental Sensors     | Network condition monitoring |
+| OLED Display *(Optional)* | Local status display         |
+| Lithium Battery Pack      | Portable node power          |
+
+---
+
+## Testing Tools
+
+| Tool           | Purpose                 |
+| -------------- | ----------------------- |
+| Logic Analyzer | Communication debugging |
+| Oscilloscope   | Signal testing          |
+
+---
+
+# Software Components / Dependencies
+
+## Silicon Labs Dependencies
+
+1. Gecko SDK Suite (GSDK) v4.x
+2. Simplicity Studio v6
+3. Wi-SUN SDK (Latest Stable Release)
+
+---
+
+## External Software Dependencies
+
+| Software              | Purpose               |
+| --------------------- | --------------------- |
+| TensorFlow Lite Micro | Edge AI inference     |
+| Flask                 | Dashboard backend     |
+| MQTT                  | Node communication    |
+| Grafana               | Network visualization |
+
+---
+
+# Licensing
+
+This project uses the Apache License 2.0.
+
+## Third-Party Licenses
+
+| Component             | License    |
+| --------------------- | ---------- |
+| TensorFlow Lite Micro | Apache 2.0 |
+| Grafana               | AGPLv3     |
+
+---
+
+# Maintainers / Contact
+
+| Name            | Role                           | Contact                                                   | GitHub                           |
+| --------------- | ------------------------------ | --------------------------------------------------------- | -------------------------------- |
+| **Shubhi Garg** | Project Maintainer & Developer | [gargshubhi464@gmail.com](mailto:gargshubhi464@gmail.com) | https://github.com/shubhi-garg27 |
+
