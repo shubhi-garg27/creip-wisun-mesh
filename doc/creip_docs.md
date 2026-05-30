@@ -24,7 +24,7 @@ The platform can:
 * reduce packet loss and latency,
 * and self-heal the network in real time.
 
-CREIP also creates a Digital RF Twin to visualize network behaviour, RF conditions, and node health across the infrastructure.
+CREIP also creates a Digital RF Twin to visualize network behavior, RF conditions, and node health across the infrastructure.
 
 Unlike conventional routing systems, CREIP combines:
 
@@ -58,7 +58,8 @@ to build a resilient and intelligent wireless ecosystem for future IoT deploymen
 
 # Technical Architecture
 
-## System Architecture Diagram
+## System Architecture
+
 ```mermaid
 flowchart TD
 
@@ -84,8 +85,12 @@ L --> M[RF Heatmaps]
 L --> N[Network Health Analytics]
 L --> O[Latency Visualization]
 L --> P[Packet Flow Visualization]
+```
+
+---
 
 ## Data Flow Architecture
+
 ```mermaid
 flowchart LR
 
@@ -111,9 +116,12 @@ I --> J[Predictive Route Decision]
 J --> K[Dynamic Path Allocation]
 
 K --> L[Optimized Mesh Communication]
+```
+
 ---
 
 ## Self-Healing Workflow
+
 ```mermaid
 flowchart TD
 
@@ -132,7 +140,52 @@ E --> F[Update Routing Table]
 F --> G[Traffic Re-Routing]
 
 G --> H[Mesh Stabilization]
+```
+
 ---
+
+## AI Routing Decision Process
+
+```mermaid
+sequenceDiagram
+
+participant Node
+participant RFMonitor
+participant AIEngine
+participant Router
+participant Mesh
+
+Node->>RFMonitor: RSSI, SNR, Latency Data
+RFMonitor->>AIEngine: RF Metrics
+AIEngine->>AIEngine: Predict Link Quality
+AIEngine->>Router: Recommended Route
+Router->>Mesh: Update Routing Table
+Mesh-->>Node: Optimized Communication Path
+```
+
+---
+
+## Digital RF Twin Workflow
+
+```mermaid
+flowchart LR
+
+A[Mesh Nodes]
+--> B[RF Data Collection]
+
+B --> C[RF Environment Learning]
+
+C --> D[Digital RF Twin]
+
+D --> E[Heatmap Generation]
+D --> F[Node Health Analysis]
+D --> G[Congestion Mapping]
+
+E --> H[Monitoring Dashboard]
+F --> H
+G --> H
+```
+
 ---
 
 # Technologies Used
@@ -185,66 +238,4 @@ G --> H[Mesh Stabilization]
 | EFR32MG24 SoC        | Mesh communication nodes |
 | EFR32MG26 SoC        | AI routing controller    |
 | Wireless Pro Kit     | Development & debugging  |
-| BRD4198A Radio Board | Wi-SUN testing           |
-
----
-
-## External Hardware
-
-| Component                 | Purpose                      |
-| ------------------------- | ---------------------------- |
-| Raspberry Pi              | Dashboard hosting            |
-| Environmental Sensors     | Network condition monitoring |
-| OLED Display *(Optional)* | Local status display         |
-| Lithium Battery Pack      | Portable node power          |
-
----
-
-## Testing Tools
-
-| Tool           | Purpose                 |
-| -------------- | ----------------------- |
-| Logic Analyzer | Communication debugging |
-| Oscilloscope   | Signal testing          |
-
----
-
-# Software Components / Dependencies
-
-## Silicon Labs Dependencies
-
-1. Gecko SDK Suite (GSDK) v4.x
-2. Simplicity Studio v6
-3. Wi-SUN SDK (Latest Stable Release)
-
----
-
-## External Software Dependencies
-
-| Software              | Purpose               |
-| --------------------- | --------------------- |
-| TensorFlow Lite Micro | Edge AI inference     |
-| Flask                 | Dashboard backend     |
-| MQTT                  | Node communication    |
-| Grafana               | Network visualization |
-
----
-
-# Licensing
-
-This project uses the Apache License 2.0.
-
-## Third-Party Licenses
-
-| Component             | License    |
-| --------------------- | ---------- |
-| TensorFlow Lite Micro | Apache 2.0 |
-| Grafana               | AGPLv3     |
-
----
-
-# Maintainers / Contact
-
-| Name            | Role                           | Contact                                                   | GitHub                           |
-| --------------- | ------------------------------ | --------------------------------------------------------- | -------------------------------- |
-| **Shubhi Garg** | Project Maintainer & Developer | [gargshubhi464@gmail.com](mailto:gargshubhi464@gmail.com) | https://github.com/shubhi-garg27 |
+| BRD4198A Radio Board | Wi-SUN                   |
