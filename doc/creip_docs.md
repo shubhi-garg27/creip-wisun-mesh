@@ -58,18 +58,35 @@ to build a resilient and intelligent wireless ecosystem for future IoT deploymen
 
 # Technical Architecture
 
-### System Architecture Diagram
+## System Architecture Diagram
 
-Attached in the `images/` folder.
+The overall CREIP architecture showing sensor nodes, AI-driven routing intelligence, predictive path optimization, congestion prediction, self-healing logic, and cloud monitoring.
 
-### Data Flow Architecture
+<p align="center">
+  <img src="images/system-architecture-diagram.png" alt="CREIP System Architecture" width="1000"/>
+</p>
 
-Attached in the `images/` folder.
+---
 
-### Self-Healing Workflow
+## Data Flow Architecture
 
-Attached in the `images/` folder.
+The data flow pipeline illustrating RF metrics collection, AI inference, predictive route decision making, dynamic path allocation, and optimized mesh communication.
 
+<p align="center">
+  <img src="images/dataflow-architecture.png" alt="CREIP Data Flow Architecture" width="1000"/>
+</p>
+
+---
+
+## Self-Healing Workflow
+
+The self-healing decision workflow used by CREIP to detect unstable links, predict failures, generate alternate routes, and stabilize mesh communications.
+
+<p align="center">
+  <img src="images/self-healing-workflow.png" alt="CREIP Self-Healing Workflow" width="700"/>
+</p>
+
+---
 ---
 
 # Technologies Used
