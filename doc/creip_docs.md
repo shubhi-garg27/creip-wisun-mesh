@@ -59,7 +59,7 @@ to build a resilient and intelligent wireless ecosystem for future IoT deploymen
 # Technical Architecture
 
 ## System Architecture Diagram
-``mermaid
+```mermaid
 flowchart TD
 
 A[Sensor / Edge Nodes<br>EFR32MG24]
@@ -86,23 +86,52 @@ L --> O[Latency Visualization]
 L --> P[Packet Flow Visualization]
 
 ## Data Flow Architecture
+```mermaid
+flowchart LR
 
-The data flow pipeline illustrating RF metrics collection, AI inference, predictive route decision making, dynamic path allocation, and optimized mesh communication.
+A[IoT Mesh Nodes]
+--> B[RF Metrics Collection]
 
-<p align="center">
-  <img src="images/dataflow-architecture.png" alt="CREIP Data Flow Architecture" width="1000"/>
-</p>
+B --> C[RSSI]
+B --> D[SNR]
+B --> E[Latency]
+B --> F[Packet Loss]
+B --> G[Battery Health]
+B --> H[Congestion Level]
 
+C --> I[AI Inference Engine]
+D --> I
+E --> I
+F --> I
+G --> I
+H --> I
+
+I --> J[Predictive Route Decision]
+
+J --> K[Dynamic Path Allocation]
+
+K --> L[Optimized Mesh Communication]
 ---
 
 ## Self-Healing Workflow
+```mermaid
+flowchart TD
 
-The self-healing decision workflow used by CREIP to detect unstable links, predict failures, generate alternate routes, and stabilize mesh communications.
+A[Node Health Monitoring]
 
-<p align="center">
-  <img src="images/self-healing-workflow.png" alt="CREIP Self-Healing Workflow" width="700"/>
-</p>
+A --> B{Link Stability Healthy?}
 
+B -->|Yes| C[Continue Current Route]
+
+B -->|No| D[Predict Future Failure]
+
+D --> E[Generate Alternate Path]
+
+E --> F[Update Routing Table]
+
+F --> G[Traffic Re-Routing]
+
+G --> H[Mesh Stabilization]
 ---
 ---
 
