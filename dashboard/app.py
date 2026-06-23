@@ -1,21 +1,29 @@
 from flask import Flask, render_template
-import random
+import json
 
 app = Flask(__name__)
 
 @app.route("/")
-def dashboard():
+def index():
 
-    data = {
-        "rssi": random.randint(-90, -60),
-        "latency": random.randint(10, 100),
-        "packet_loss": random.randint(0, 20),
-        "congestion": random.randint(0, 100)
-    }
+    with open("data/sample_nodes.json") as f:
+        network = json.load(f)
+
+    avg_health = sum(
+        n["health"]
+        for n in network["nodes"]
+    ) / len(network["nodes"])
+
+    weak_nodes = len([
+        n for n in network["nodes"]
+        if n["health"] < 60
+    ])
 
     return render_template(
         "index.html",
-        data=data
+        network=network,
+        avg_health=round(avg_health, 2),
+        weak_nodes=weak_nodes
     )
 
 if __name__ == "__main__":
