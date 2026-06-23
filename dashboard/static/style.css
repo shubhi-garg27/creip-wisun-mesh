@@ -1,1 +1,43 @@
 
+body
+{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+header
+{
+    text-align: center;
+}
+
+.summary
+{
+    display: flex;
+    gap: 20px;
+}
+
+.card
+{
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 250px;
+}
+
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td
+{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+canvas
+{
+    margin-top: 30px;
+}
