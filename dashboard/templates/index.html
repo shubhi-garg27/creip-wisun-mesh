@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
 
+<title>CREIP Digital RF Twin</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<h1>CREIP Digital RF Twin Dashboard</h1>
+</header>
+
+<div class="summary">
+
+<div class="card">
+<h2>Average Network Health</h2>
+<p>{{ avg_health }}%</p>
+</div>
+
+<div class="card">
+<h2>Weak Nodes</h2>
+<p>{{ weak_nodes }}</p>
+</div>
+
+</div>
+
+<h2>Node Status</h2>
+
+<table>
+
+<tr>
+<th>Node</th>
+<th>RSSI</th>
+<th>Latency</th>
+<th>Packet Loss</th>
+<th>Health</th>
+<th>Status</th>
+</tr>
+
+{% for node in network.nodes %}
+
+<tr>
+
+<td>{{ node.id }}</td>
+
+<td>{{ node.rssi }}</td>
+
+<td>{{ node.latency }}</td>
+
+<td>{{ node.packet_loss }}</td>
+
+<td>{{ node.health }}</td>
+
+<td>{{ node.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h2>Network Health Overview</h2>
+
+<canvas id="healthChart"></canvas>
+
+<script>
+
+const healthData = [
+{% for node in network.nodes %}
+{{ node.health }},
+{% endfor %}
+];
+
+const nodeLabels = [
+{% for node in network.nodes %}
+"{{ node.id }}",
+{% endfor %}
+];
+
+</script>
+
+<script src="{{ url_for('static',
+filename='dashboard.js') }}"></script>
+
+</body>
+</html>
