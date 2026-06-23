@@ -1,1 +1,28 @@
-
+{
+  "nodes": [
+    {
+      "id": "Node-A",
+      "rssi": -68,
+      "latency": 22,
+      "packet_loss": 2,
+      "health": 92,
+      "status": "Healthy"
+    },
+    {
+      "id": "Node-B",
+      "rssi": -83,
+      "latency": 61,
+      "packet_loss": 12,
+      "health": 48,
+      "status": "Weak"
+    },
+    {
+      "id": "Node-C",
+      "rssi": -72,
+      "latency": 35,
+      "packet_loss": 4,
+      "health": 80,
+      "status": "Healthy"
+    }
+  ]
+}
